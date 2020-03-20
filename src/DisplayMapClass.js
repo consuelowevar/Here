@@ -13,7 +13,7 @@ export class DisplayMapClass extends React.Component {
 
     const H = window.H;
     const platform = new H.service.Platform({
-        apikey: "{HERE-API-KEY}"
+        apikey: "-bMRNp0dZwfSHYIQuSALnzuYbk6PJujHJabE13dq2bc"
     });
 
     const defaultLayers = platform.createDefaultLayers();
@@ -29,6 +29,15 @@ export class DisplayMapClass extends React.Component {
         pixelRatio: window.devicePixelRatio || 1
       }
     );
+
+    // MapEvents enables the event system
+    // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+    // This variable is unused and is present for explanatory purposes
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+    // Create the default UI components to allow the user to interact with them
+    // This variable is unused
+    const ui = H.ui.UI.createDefault(map, defaultLayers);
 
     this.setState({ map });
   }
