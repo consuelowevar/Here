@@ -24,7 +24,7 @@ export class DisplayMapClass extends React.Component {
       defaultLayers.vector.normal.map,
       {
         // This map is centered over Europe
-        center: { lat: 50, lng: 5 },
+        center: { lat: -33, lng: -70 },
         zoom: 4,
         pixelRatio: window.devicePixelRatio || 1
       }
