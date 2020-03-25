@@ -13,7 +13,7 @@ export class DisplayMapClass extends React.Component {
 
     const H = window.H;
     const platform = new H.service.Platform({
-        apikey: "-bMRNp0dZwfSHYIQuSALnzuYbk6PJujHJabE13dq2bc"
+      apikey: "-bMRNp0dZwfSHYIQuSALnzuYbk6PJujHJabE13dq2bc"
     });
 
     const defaultLayers = platform.createDefaultLayers();
@@ -40,6 +40,32 @@ export class DisplayMapClass extends React.Component {
     const ui = H.ui.UI.createDefault(map, defaultLayers, 'es-ES');
 
     this.setState({ map });
+    this.geolocating();
+
+  }
+  // Function for geolocation 
+  geolocating() {
+    const location = window.navigator && window.navigator.geolocation;
+    if (location) {
+      location.getCurrentPosition(
+        position => {
+          this.state.map.setCenter({ lat: position.coords.latitude, lng: position.coords.longitude })
+          this.state.map.setZoom(17);
+
+          // Adding a virtual patient marker 
+          const patient = new window.H.map.Marker({ lat: -33.580820000, lng: -70.652300000 });
+          this.state.map.addObject(patient);
+
+
+        },
+        error => {
+          this.setState({
+            latitude: "err-latitude",
+            longitude: "err-longitude"
+          });
+        }
+      );
+    }
   }
 
   componentWillUnmount() {
