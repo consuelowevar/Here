@@ -1,13 +1,37 @@
 //App.js
-import React from 'react';
-import {DisplayMapClass} from './DisplayMapClass';
+import React, { Component } from 'react';
+// import {DisplayMapClass} from './DisplayMapClass';
+import Welcome from './Views/Welcome'
 
-function App() {
-return (
-<DisplayMapClass />
-);
-}
-export default App;
+class App extends Component {
+    render() {
+      return (
+        // <Router>
+        //     <Switch>
+        //       <Route exact path="/">
+                <Welcome />
+        //       </Route>
+        //       <Route path="/Home">
+        //         <MyNavBar />
+        //       </Route>
+        //     </Switch>
+        // </Router>
+      );
+    }
+  }
+  
+  export default App;
+
+
+
+// function App() {
+// return (
+//    <Welcome />
+//     { /*<DisplayMapClass /> */ }
+
+// );
+// }
+// export default App;
 
 // import React from 'react';
 // import logo from './logo.svg';
