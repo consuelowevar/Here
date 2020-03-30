@@ -1,21 +1,35 @@
 //App.js
 import React, { Component } from 'react';
 // import {DisplayMapClass} from './DisplayMapClass';
-import Welcome from './Views/Welcome'
+import Welcome from './Views/Welcome';
+import Login from './Views/Login'
+import Home from './Views/Home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import RegisterDoc from './Views/RegisterDoc';
 
 class App extends Component {
     render() {
       return (
-        // <Router>
-        //     <Switch>
-        //       <Route exact path="/">
+        <Router>
+             <Switch>
+               <Route exact path="/">
                 <Welcome />
-        //       </Route>
-        //       <Route path="/Home">
-        //         <MyNavBar />
-        //       </Route>
-        //     </Switch>
-        // </Router>
+               </Route>
+               <Route path="/Login">
+                 <Login />
+               </Route>
+               <Route path="/RegisterDoc">
+                <RegisterDoc />
+               </Route>
+               <Route path="/Home">
+                 <Home />
+               </Route>
+             </Switch>
+         </Router>
       );
     }
   }
