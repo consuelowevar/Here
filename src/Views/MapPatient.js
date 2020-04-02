@@ -1,5 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
+
 
 const APP_ID_HERE = 'lnSIkpuj0z204RxRVyA8';
 const APP_CODE_HERE = 'OZRJW15Yv9e8NV7RVl16mA';
@@ -15,6 +17,10 @@ export default class MapPatient extends React.Component {
         address: null,
         coordinates: null
     };
+
+    handleClick() {
+        console.log('funciona')
+    }
 
     handleChange = e => {
         this.setState({
@@ -152,7 +158,10 @@ export default class MapPatient extends React.Component {
                                 name="addressText"
                                 onChange={this.handleChange}
                             />
-                            <input className="button" type="submit" value="Aceptar" />
+                            <input className="button" type="submit" value="Buscar dirección" />
+
+                            <input className="button" type="button" value="Confirmar solicitud" />
+
                         </div>
                     </form>
                 </div>

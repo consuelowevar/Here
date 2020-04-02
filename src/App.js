@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Welcome from './Views/Welcome';
 import Login from './Views/Login'
 import Home from './Views/Home'
+import RegisterPatient from './Views/RegisterPatient';
 import MapPatient from './Views/MapPatient';
 import './App.css'
 import {
@@ -16,7 +17,6 @@ import RegisterDoc from './Views/RegisterDoc';
 class App extends Component {
   render() {
     return (
-      // <MapPatient />
       <Router>
         <Switch>
           <Route exact path="/">
@@ -24,6 +24,9 @@ class App extends Component {
           </Route>
           <Route path="/Login">
             <Login />
+          </Route>
+          <Route path="/RegisterPatient">
+            <RegisterPatient />
           </Route>
           <Route path="/RegisterDoc">
             <RegisterDoc />
@@ -33,6 +36,7 @@ class App extends Component {
           </Route>
         </Switch>
       </Router>
+
     );
   }
 }
