@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-// import {Link} from "react-router-dom";
+import Logo from "../images/logo-2.png";
+import { Link } from "react-router-dom";
 
 class RegisterPatient extends Component {
     render() {
         return (
             <div className="row section container">
+                <img className="imgLogo" alt="Logo" src={Logo} />
                 <form className="col s12">
                     <div className="row card-panel light-green lighten-5">
                         <h3 className="center gray-text">Bienvenido </h3>
