@@ -16,23 +16,23 @@ import RegisterDoc from './Views/RegisterDoc';
 class App extends Component {
   render() {
     return (
-      <MapPatient />
-      // <Router>
-      //   <Switch>
-      //     <Route exact path="/">
-      //       <Welcome />
-      //     </Route>
-      //     <Route path="/Login">
-      //       <Login />
-      //     </Route>
-      //     <Route path="/RegisterDoc">
-      //       <RegisterDoc />
-      //     </Route>
-      //     <Route path="/Home">
-      //       <Home />
-      //     </Route>
-      //   </Switch>
-      // </Router>
+      // <MapPatient />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route path="/Login">
+            <Login />
+          </Route>
+          <Route path="/RegisterDoc">
+            <RegisterDoc />
+          </Route>
+          <Route path="/Home">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {firebase} from '../firebase';
+import Logo from "../images/logo-2.png";
+
 
 class Login extends Component {
 handleAuth () {
@@ -14,6 +16,7 @@ handleAuth () {
       return (
       
         <div className="row section container">
+          <img className="imgLogo" alt="Logo" src={Logo} />
            <form className="col s12">
           <div className="row card-panel light-green lighten-5">
           <h1>Bienvenido</h1>

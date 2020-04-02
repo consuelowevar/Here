@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import 'materialize-css/dist/css/materialize.min.css';
 import './welcome.css'
+import Logo from "../images/logo-2.png";
+
 
 
 class Welcome extends Component {
   render() {
     return (
       <div className="row section container">
+         <img className="imgLogo" alt="Logo" src={Logo} />
 
 
 
