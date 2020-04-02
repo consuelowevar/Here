@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import {firebase} from '../firebase';
+import Logo from "../images/logo-2.png";
+
 
 class Login extends Component {
 handleAuth () {
@@ -13,6 +15,8 @@ handleAuth () {
     render() {
       return (
         <div className="section">
+          <img className="imgLogo" alt="Logo" src={Logo} />
+
           <h1>Bienvenido</h1>
         
           <form>

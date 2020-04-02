@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import Logo from "../images/logo-2.png";
 import 'materialize-css/dist/css/materialize.min.css';
 import './welcome.css'
 
@@ -13,7 +14,8 @@ class Welcome extends Component {
       
       <div className="card light-green lighten-5">
         <div className="card-content center">
-        <h1 className="col s12 m12 l12">Bienvenido a App Salud</h1>
+          <img className="imgLogo" alt="Logo" src={Logo} />
+        <h1 className="col s12 m12 l12">Bienvenido</h1>
         <Link to="/RegisterDoc"> 
         <button className="btn black-text   light-green lighten-3 waves-effect  s12 m6 l6">Soy Profesional de Salud</button>
         </Link> 
