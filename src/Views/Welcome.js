@@ -8,7 +8,6 @@ class Welcome extends Component {
   render() {
     return (
       <div className="row section container">
-        
 
       
       <div className="card light-green lighten-5">
