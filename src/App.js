@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Welcome from './Views/Welcome';
 import Login from './Views/Login'
 import Home from './Views/Home'
+import MapPatient from './Views/MapPatient';
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -13,29 +14,30 @@ import {
 import RegisterDoc from './Views/RegisterDoc';
 
 class App extends Component {
-    render() {
-      return (
-        <Router>
-             <Switch>
-               <Route exact path="/">
-                <Welcome />
-               </Route>
-               <Route path="/Login">
-                 <Login />
-               </Route>
-               <Route path="/RegisterDoc">
-                <RegisterDoc />
-               </Route>
-               <Route path="/Home">
-                 <Home />
-               </Route>
-             </Switch>
-         </Router>
-      );
-    }
+  render() {
+    return (
+      // <MapPatient />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route path="/Login">
+            <Login />
+          </Route>
+          <Route path="/RegisterDoc">
+            <RegisterDoc />
+          </Route>
+          <Route path="/Home">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    );
   }
-  
-  export default App;
+}
+
+export default App;
 
 
 
