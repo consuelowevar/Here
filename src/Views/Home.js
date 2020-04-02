@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
-    render() {
-      return (
-        <div className="section">
-          <button className="button">
-              Acitvar Localización
+  render() {
+    return (
+      <div className="section">
+        <button className="button">
+          Activar Localización
           </button>
-        </div>
-      );
-    }
+      </div>
+    );
   }
+}
 
-  export default Home;
+export default Home;
