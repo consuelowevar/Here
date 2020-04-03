@@ -34,6 +34,9 @@ class App extends Component {
           <Route path="/Home">
             <Home />
           </Route>
+          <Route exact path="/Notification">
+            <Notification />
+          </Route>
         </Switch>
       </Router>
 
