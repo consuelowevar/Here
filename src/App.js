@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Welcome from './Views/Welcome';
 import Login from './Views/Login'
 import Home from './Views/Home'
+import RegisterPatient from './Views/RegisterPatient';
 import MapPatient from './Views/MapPatient';
 import './App.css'
 import {
@@ -16,7 +17,6 @@ import RegisterDoc from './Views/RegisterDoc';
 class App extends Component {
   render() {
     return (
-      // <MapPatient />
       <Router>
         <Switch>
           <Route exact path="/">
@@ -24,6 +24,9 @@ class App extends Component {
           </Route>
           <Route path="/Login">
             <Login />
+          </Route>
+          <Route path="/RegisterPatient">
+            <RegisterPatient />
           </Route>
           <Route path="/RegisterDoc">
             <RegisterDoc />
@@ -33,46 +36,9 @@ class App extends Component {
           </Route>
         </Switch>
       </Router>
+
     );
   }
 }
 
 export default App;
-
-
-
-// function App() {
-// return (
-//    <Welcome />
-//     { /*<DisplayMapClass /> */ }
-
-// );
-// }
-// export default App;
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Esta es nuestra aplicación para el coronavirus
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
