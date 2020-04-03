@@ -6,6 +6,7 @@ import Login from './Views/Login'
 import Home from './Views/Home'
 import RegisterPatient from './Views/RegisterPatient';
 import MapPatient from './Views/MapPatient';
+import Notification from './Views/Notification';
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -33,6 +34,9 @@ class App extends Component {
           </Route>
           <Route path="/Home">
             <Home />
+          </Route>
+          <Route path="/MapPatient">
+            <MapPatient />
           </Route>
           <Route exact path="/Notification">
             <Notification />
