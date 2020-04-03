@@ -20,3 +20,4 @@ let db = firebase.firestore();
 
 export { db, firebase }
 
+ 

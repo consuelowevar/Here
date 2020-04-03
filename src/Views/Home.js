@@ -1,24 +1,122 @@
 import React, { Component } from 'react';
-import Logo from "../images/logo-2.png";
+import Logo from '../images/logo-2.png';
+import { db, firebase } from '../firebase';
 
 
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+       form: [],
+       symptom: '',
+       historial:'',
+       medicals:'',
+       date:''
+     
+    };
+  }
+
+  resetForm() {
+    this.refs.contactForm.reset();
+  }
+
+  handleSubmit= e => {
+    e.preventDefault();
+    const params = {
+      symptom: this.inputSymptom.value,
+      historial: this.inputHistorial.value,
+      medicals: this.inputMedicals.value,
+      date: this.inputDate.value
+      
+  };
+
+
+  db.collection("form").doc("user").set({
+    symptom: this.state.symptom,
+    historial: this.state.historial,
+    medicals: this.state.medicals,
+    date: this.state.date
+   })
+    .then(function () {
+        console.log("Document successfully written!");
+    })
+    .catch(function (error) {
+        console.error("Error writing document: ", error);
+    });
+ }
+
+    // handleSubmit = e => {
+    //   e.preventDefault();
+    //   const { addressText } = this.state.address
+    //   const finalAddress = { ...this.state.address }
+    //   console.log(this.state.address)
+    //   console.log(this.state.coordinates)
+      // Saving address on Firebase
+
+  // componentDidMount() {
+  //   let formRef = db.database().ref('form').orderByKey();
+  //   formRef.on('child_added', snapshot => {
+  //     const { symptom } = snapshot.val();
+  //     const data = { symptom };
+  //     this.setState({ form: [data].concat(this.state.form) });
+  //   })
+  // }
+
+ 
+  componentDidMount() {
+    db.collection("form")
+      .get()
+      .then(querySnapshot => {
+        const data = querySnapshot.docs.map(doc => doc.data());
+        console.log(data);
+        this.setState({ form: data });
+      });
+  }
+
     render() {
       return (
         <div className="container">
           <img className="imgLogo" alt="Logo" src={Logo} />
           <h1>Ingresa tus síntomas</h1>
-          <h2>Síntomas</h2>
-          <textarea></textarea>
-          <h2>Antecedentes</h2>
-          <textarea></textarea>
-          <h2>Medicamentos que consume</h2>
-          <textarea></textarea>
-          <h2>Inicio de síntomas</h2>
-          <input></input>
-          <h2>Número telefónico</h2>
-          <input></input>
+          <form onSubmit={this.handleSubmit.bind(this)} ref='contactForm' ></form>
+          <div className='form-group'>
+            <label htmlFor='symptom'>Síntomas</label>
+            <textarea className='form-control' id='symptom' rows='3' ref={symptom => this.inputSymptom = symptom}></textarea>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='historial'>Antecedentes</label>
+            <textarea className='form-control' id='historial' rows='3' ref={historial => this.inputHistorial = historial}></textarea>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='medicals'>Medicamentos que consume</label>
+            <textarea className='form-control' id='medicals' rows='3' ref={medicals=> this.inputMedicals = medicals}></textarea>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='medicals'>Medicamentos que consume</label>
+            <textarea className='form-control' id='medicals' rows='3' ref={medicals=> this.inputMedicals = medicals}></textarea>
+          </div>
+          <div className='form-group'>
+            <label htmlFor='medicals'>Inicio de Síntomas</label>
+            <textarea className='form-control' id='date' rows='3' ref={date=> this.inputDate = date}></textarea>
+          </div>
+          
+
           <button>Continuar</button>
+
+          
+
+
+          
+
+          <div className='row'>
+                {this.state.form.map(form =>
+                  <div className='col-sm-6' key={form.symptom}>
+
+                  </div>)}
+            
+          </div>
+
         </div>
     );
   }
