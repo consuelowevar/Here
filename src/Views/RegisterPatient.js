@@ -32,7 +32,9 @@ class RegisterPatient extends Component {
                             <input type="text" id="contraseña" className="validate" required />
                             <label for="contraseña">Contraseña:</label>
                         </div>
-                        <button className="btn-large  black-text light-green lighten-3 waves-effect waves-light s12 m6 l6">Registrarme</button>
+                        <Link to="/Home">
+                            <button className="btn-large  black-text light-green lighten-3 waves-effect waves-light s12 m6 l6">Registrarme</button>
+                        </Link>
                     </div>
                 </form>
             </div>
