@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import {firebase} from '../firebase';
+import {firebase} from 'firebase';
 import Logo from "../images/logo-2.png";
 
 
